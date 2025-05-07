@@ -1,0 +1,12 @@
+{
+  "name": "esm-package",
+  "version": "1.0.0",
+  "type": "module",
+  "author": "박민호 (minoflower@i-heart.co.kr)",
+  "license": "MIT",
+  "description": "cjs 기반 패키지에서 mgov-uploader를 사용하기 위한 샘플 코드입니다.",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mgov-uploader": "file:../../mgov-uploader"
+  }
+}

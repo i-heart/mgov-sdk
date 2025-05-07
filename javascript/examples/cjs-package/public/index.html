@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      background-color: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Express</h1>
+  <button id="fetchDataBtn">fileId 발급받기</button>
+  <div style="margin-top: 40px;">
+    <b>fileId</b>: <span id="data"></span>
+  </div>
+</div>
+
+<script>
+  document.getElementById("fetchDataBtn").addEventListener("click", () => {
+    fetch("http://localhost:3000/api/data")
+    .then((response) => response.json())
+    .then((data) => {
+      const fileId = data.data?.fileId;
+      document.getElementById("data").textContent = fileId;
+    })
+    .catch((err) => console.log(err));
+  });
+</script>
+</body>
+</html>
