@@ -4,8 +4,10 @@
 /.idea/misc.xml
 /.idea/modules.xml
 /.idea/vcs.xml
+/.idea/workspace.xml
 
 # Python 바이트 코드 파일
 /python/__pycache__/
 /python/*.py[cod]
 /python/*$py.class
+
